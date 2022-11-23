@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>monkey memory</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="container"></div>
+    </div>
+    <div id="side">
+			<div id="settings">
+	      <form>
+	        <label>Numbers:</label>
+	        <input
+	          type="number"
+	          id="numbers"
+	          data-max="90"
+	          data-min="2"
+	          value="8"
+	        />
+	      </form>
+	      <form>
+	        <label>Memo time:</label>
+	        <input
+	          type="number"
+	          id="memo"
+	          data-max="999"
+	          data-min="0.001"
+	          step="0.01"
+	          value="0.4"
+	        />
+	      </form>
+	      <form>
+	        <label>Fade duration:</label>
+	        <input
+	          type="number"
+	          id="fade"
+	          data-max="2"
+	          data-min="0"
+	          step="0.01"
+	          value="0.2"
+	        />
+	      </form>
+	      <form>
+	        <label>Grid size:</label>
+	        <div id="sizes">
+	          <input
+	            type="number"
+	            id="sizew"
+	            data-max="25"
+	            data-min="2"
+	            max="30"
+	            min="2"
+	            value="4"
+	          />
+	          <label>x</label>
+	          <input
+	            type="number"
+	            id="sizeh"
+	            name="sizeh"
+	            data-max="25"
+	            data-min="2"
+	            max="30"
+	            min="2"a 
+	            value="4"
+	          />
+	        </div>
+	      </form>
+	      <form>
+	        <label>Controls:</label>
+	        <select id="controls">
+	          <option value="click">Click</option>
+	          <option value="hover">Hover</option>
+	        </select>
+	      </form>
+	      <form>
+	        <label>Show Colors:</label>
+	        <select id="colors">
+	          <option value="">No</option>
+	          <option value="true">Yes</option>
+	        </select>
+	      </form>
+			</div>
+				
+			<table border=1>
+				<thead>
+					<tr>
+						<th width="40px">#</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+			</table>
+			<table border=1 id="score">
+				
+			</table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

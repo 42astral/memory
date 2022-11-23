@@ -1,0 +1,156 @@
+:root  {
+  --rows: repeat(4, 1fr);
+  --columns: repeat(4, 1fr);
+	--tile-color: rgb(255, 255, 255);
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#main {
+  float: left;
+  background-color: #000;
+  width: calc(100% - 175px);
+  height: 100%;
+  overflow: hidden;
+}
+
+#container {
+  display: grid;
+  grid-template-rows: var(--rows);
+  grid-template-columns: var(--columns);
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 240px;
+  padding-top: 8px;
+  padding-left: 8px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+}
+
+#side {
+  float: right;
+  background-color: #fff;
+  width: 175px;
+  height: 100%;
+  font-size: 13px;
+	overflow: hidden;
+}
+
+.tile {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(0, 0, 0, 0);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+	position: relative;
+}
+
+.tileBackground {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50px;
+	height: 50px;
+	background-color: var(--tile-color);
+	opacity: 0;
+}
+
+table {
+	width: 100%;
+}
+
+#settings {
+	height: 140px;
+}
+
+#score {
+	display: block;
+	border-top-width: 0px;
+	overflow-y: auto;
+	height: calc(100% - 163px);
+}
+
+label {
+  float: left;
+  padding-top: 4px;
+}
+
+form {
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+  height: 22px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+*:focus {
+  outline: none;
+}
+
+input[type="number"] {
+  float: right;
+  width: 80px;
+}
+
+select {
+  float: right;
+  width: 88px;
+}
+
+#sizes {
+  width: 88px;
+  float: right;
+}
+
+#sizes > label {
+  text-align: center;
+  width: 10px;
+}
+
+#sizew,
+#sizeh {
+  width: 30px;
+  margin: 0;
+}
+
+#sizew {
+  float: left;
+}
+
+#sizeh {
+  float: right;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
