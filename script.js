@@ -223,7 +223,10 @@ const changeBoard = (w, h) => {
 const setupTiles = (tiles) => {
   for (const tile of tiles) {
     tile.addEventListener("mousedown", () => {
-      manageClick(tile, tile.dataset.value);
+      if (controls === "click") manageClick(tile, tile.dataset.value);
+    })
+    tile.addEventListener("mousemove", () => {
+      if (controls === "hover") manageClick(tile, tile.dataset.value);
     })
   }
 }
