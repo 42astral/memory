@@ -62,7 +62,7 @@ const scoreBoard = (scores) => {
 	scoreEl.innerHTML = "";
 	for (let i = 0; i < scores.length; i++) {
 		let row = document.createElement("tr");
-		row.innerHTML = `<td width="40px">${i + 1}</td><td width="120px">${scores[i].score} (${(scores[i].time / 1000).toFixed(1)})</td>`;
+		row.innerHTML = `<td width="40px">${i + 1}</td><td width="120px">${scores[i].score} (${(scores[i].time / 1000).toFixed(3)})</td>`;
 		scoreEl.append(row);
 	}
 }
