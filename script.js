@@ -69,6 +69,12 @@ const scoreBoard = (scores) => {
 
 scoreBoard(scores);
 
+const resetScores = () => {
+  scores = [];
+  scoreBoard(scores);
+  localStorage.scores = scores;
+}
+
 const manageInput = (input) => {
   input.value ? (input.value = parseFloat(input.value)) : (input.value = 0);
   if (parseFloat(input.value) > parseFloat(input.dataset.max))
@@ -237,6 +243,7 @@ const manageClick = (tile, value) => {
 		tile.childNodes[1].offsetHeight;
 	}
   if (state === "playing") {
+    if (!currentTimer) currentTimer = performance.now();
 	  if (value == current) {
 	    if (current === parseInt(numbers)) {
 				scores.push({ score: `${current}/${numbers}`, time: performance.now() - currentTimer });
@@ -252,12 +259,6 @@ const manageClick = (tile, value) => {
 	    fail(tiles, `${current - 1}/${numbers}`, performance.now() - currentTimer);
 	  }
 	} else {
-		tile.childNodes[0].style.opacity = "0";
-		tile.childNodes[1].style.opacity = "1";
-		clearTimeout(timeout);
-    state = "playing";
-		currentTimer = performance.now();
-		manageClick(tile, value);
 	}
 }
 
